@@ -1,0 +1,83 @@
+﻿@model Livraria.DomainModel.Models.Entity.Book
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoria.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Editora.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Editora.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Isbn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Isbn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPublicacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataPublicacao)
+        </dd>
+        <dt>
+            @Html.DisplayName("Categoria")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Categoria.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Editora")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Editora.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayName("Author")
+        </dt>
+        <dd>
+            @foreach (var item in Model.BookAuthor)
+            {
+                @Html.DisplayFor(modelitem=> item.Author.AuthorName)
+
+            }
+
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BookId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

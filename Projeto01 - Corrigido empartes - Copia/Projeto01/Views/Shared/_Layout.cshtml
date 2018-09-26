@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"  charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/content/bootstrap.css")" rel="stylesheet"/>
+    @RenderSection("styles", false)
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="page-header col-xs-12 col-md-12 bg-primary">
+                <h2 class="text-white">Livraria InfoBook <small class="text-white">Curso INFNET</small></h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-2 col-md-2 bg-secondary">
+                <ul class="text-white",class="nav nav-pills nav-stacked">
+                    <li id="liHome" role="presentation"  class="active"><a class="text-white", href="##">Home</a></li>
+                    <li id="liCategorias" role="presentation">@Html.ActionLink("Categorias", "Index", "Categorias", new {@class = "text-white" } )</li>
+                    <li id="liEditoras" role="presentation">@Html.ActionLink("Editoras", "Index", "Editoras", new { @class = "text-white" })</li>
+                </ul>
+            </div>
+            <div class="col-xs-9 col-md-9">
+                <br />
+                @RenderBody()
+            </div>
+        </div>
+
+        <br/>
+        <div class="row">
+            <div class="col-xs-12 col-md-12 bg-primary">
+                <small class="text-white">Layout com Bootstrap</small>
+            </div>
+        </div>
+    </div>
+    <script src="@Url.Content("~/scripts/jquery-1.10.2.js")"></script>
+    <script src="@Url.Content("~/scripts/bootstrap.js")"></script>
+    @RenderSection("ScriptPage", false)
+</body>
+</html>
